@@ -28,7 +28,7 @@ from mujoco_mpc import agent as agent_lib
 # model
 model_path = (
     pathlib.Path(__file__).parent.parent.parent
-    / "../../build/mjpc/tasks/cartpole/task.xml"
+    / "../../build/mjpc/tasks/quadrotor/task.xml"
 )
 model = mujoco.MjModel.from_xml_path(str(model_path))
 
@@ -40,7 +40,7 @@ renderer = mujoco.Renderer(model)
 
 # %%
 # agent
-agent = agent_lib.Agent(task_id="Cartpole", model=model)
+agent = agent_lib.Agent(task_id="quadrotor", model=model)
 
 # weights
 agent.set_cost_weights({"Velocity": 0.15})
